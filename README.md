@@ -25,6 +25,3 @@ All branches contain all necessary code. The idea is to get main and init workin
 Do not edit code other than the specific .py on each branch as those wont be merged to master
                                                               
 Once each branch works perfectly, mains will be merged and init, sensors and display will overwrite what is in master.
-
-
-Max - testing from Pi
