@@ -1,13 +1,20 @@
 This is a project done by Max Chernotsky, James de Villiers and John Peddie
 
-Delegation:
+Code Structure:
 
-Max Chernotsky:
+main.py
 
+Technical Branch 
+	- initialise Pins
+	- set defaults
 
-James de Villiers:
+Sensor Branch 
+	- temperature sensor
+	- voltage sensor
+	- light sensor
 
-
-John Peddie:
-
+Display Branch 
+	- nice output
+	- reset output
+	- switches
 
