@@ -7,11 +7,14 @@ spi = spidev.SpiDev() # create spi object
 spi.open(0,0)
 # RPI has one bus (#0) and two devices (#0 & #1)
 
-def getTempreture(tempSensorPin):
+def getTempreture(tempSensorChannel):
     #code to get getTempreture from sensor
     #get info from pin: tempSensorPin
     #turn it into usable data
-    return temp
+    adc = spi.xfer2([1,(8+tempSensorChannel)<<4,0]) # sending 3 bytes
+    data = ((adc[1]&3) << 8) + adc[2]
+    return data
+
 
 def getPot(potPin):
     return pot
