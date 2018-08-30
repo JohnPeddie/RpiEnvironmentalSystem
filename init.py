@@ -9,6 +9,7 @@ def initADC(SPICLK, SPIMISO, SPIMOSI, SPICS):
     GPIO.setup(SPICLK, GPIO.OUT)
     GPIO.setup(SPICS, GPIO.OUT)
     mcp = Adafruit_MCP3008.MCP3008(clk=SPICLK, cs=SPICS, mosi=SPIMOSI, miso=SPIMISO)
+    #Add code to deal with mcp
 
 
 def initPins(tempSensorPin,potPin,ldrPin,resetPin):
