@@ -10,13 +10,19 @@ tempSensorPin = 22 #examples, i dont know if these pins are correct
 potPin = 23
 ldrPin =24
 resetPin = 25
+
+#ADC PINS
+SPICLK = 11
+SPIMISO = 9
+SPIMOSI = 10
+SPICS = 8
 #bla bla more pins
 #might be better to make the pins an array/linkedList
 
 def main():
-    global tempSensorPin, potPin, ldrPin, resetPin
+    global tempSensorPin, potPin, ldrPin, resetPin, SPICLK, SPIMISO, SPIMOSI, SPICS
     #run initialisation
-    init.initADC()
+    init.initADC(SPICLK, SPIMISO, SPIMOSI, SPICS)
     init.initPins(tempSensorPin,potPin,ldrPin,resetPin)
     #bla bla just example code on how to call functions from another file
     timer = 0
