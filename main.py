@@ -17,12 +17,13 @@ SPIMISO = 9
 SPIMOSI = 10
 SPICS = 8
 
+
 def main():
 	global resetPin, SPICLK, SPIMISO, SPIMOSI, SPICS
 
 	#run initialisation
 	init.initADC(SPICLK, SPIMISO, SPIMOSI, SPICS)
-	init.initPins(tempSensorPin,potPin,ldrPin,resetPin)
+	init.initPins(resetPin)
 
 	timer = 0
 	state = True #if state is false program is not running
@@ -44,3 +45,6 @@ def main():
 
 			data = sensors.getSensors(0, 0.5)
 			print data
+
+if __name__ == '__main__':
+	main()
