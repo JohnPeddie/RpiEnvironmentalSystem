@@ -1,5 +1,5 @@
 This is a project done by Max Chernotsky, James de Villiers and John Peddie.
-For the course EEE3096S - Embedded Systems 1
+For the course EEE3096S - Embedded Systems 2
 
 
 Code Structure:
