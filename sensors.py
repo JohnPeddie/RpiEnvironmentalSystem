@@ -4,6 +4,8 @@ import time
 import os
 import sys
 import Adafruit_MCP3008 #required library for adc, see prac sheet for how to install adafruit
+import time
+
 
 #ADC PINS
 SPICLK = 11
@@ -14,7 +16,7 @@ SPICS = 8
 pot_adc = 0
 temp_adc = 0
 light_adc = 0
-values = [0]*3
+values = [0]*5
 
 def getData():
         GPIO.setmode(GPIO.BCM)
@@ -30,8 +32,13 @@ def getData():
 	potV = round((pot_adc/1024.0)*3.3, 2)
 	temp = round(((((temp_adc*3.3)/1024)-0.5)/0.01),2)
 	light = round((light_adc/985.0)*100.0,2)
-	values[0] = potV
-	values[1] = temp
-	values[2] = light
+	
+	
+	
+	values[0] = time.strftime("%x") 
+	values[1] = 0
+	values[2] = potV
+	values[3] = temp
+	values[4] = light
 
 	return values
