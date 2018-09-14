@@ -1,6 +1,6 @@
-This is a project done by Max Chernotsky, James de Villiers and John Peddie:
+This is a project done by Max Chernotsky, James de Villiers and John Peddie.
+For the course EEE3096S - Embedded Systems 1
 
-Ignore pull request for now. I dont know how we are going to standerdise the main.py
 
 Code Structure:
 
