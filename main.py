@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import init.py
 import sensors.py
 import display.py
