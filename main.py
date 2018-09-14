@@ -21,6 +21,8 @@ SPICS = 8
 #global variables
 delay = 0.5
 
+GPIO.add_event_detect(frequencySwitch, GPIO.FALLING, callback=frequencyChange, bouncetime=200)
+
 def main():
 	global resetSwitch, frequencySwitch, stopSwitch, displaySwitch, SPICLK, SPIMISO, SPIMOSI, SPICS
 
@@ -34,9 +36,6 @@ def main():
 
 
 		while(state):#will run until reset button is bushed
-
-			GPIO.add_event_detect(frequencySwitch, GPIO.FALLING, callback=frequencyChange, bouncetime=200)
-
 
 			data = sensors.getData(0, delay)
 			print data
