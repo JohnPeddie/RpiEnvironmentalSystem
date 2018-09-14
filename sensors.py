@@ -10,7 +10,7 @@ values = [0]*8
 def getData(channel, delay):
 	try:
 		while True:
-			values[0] = init.mcp.read_adc(0)
+			values[0] = mcp.read_adc(0)
 			time.sleep(delay)
 	except KeyboardInterrupt:
 			spi.close()
