@@ -41,5 +41,5 @@ def main():
             #timer += delay
             #time.sleep(delay)
 
-            sensors.getSensors(0, 0.5)
-
+            data = sensors.getSensors(0, 0.5)
+	    print data
