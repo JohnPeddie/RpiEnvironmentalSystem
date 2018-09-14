@@ -25,7 +25,7 @@ def main():
 	init.initPins(tempSensorPin,potPin,ldrPin,resetPin)
 
 	timer = 0
-	state = False #if state is false program is not running
+	state = True #if state is false program is not running
     	while(True):
 		#check if reset button is pushed to start program
 		#bla bla bla bla
