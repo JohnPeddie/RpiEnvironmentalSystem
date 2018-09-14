@@ -20,20 +20,19 @@ SPICS = 8
 
 #global variables
 delay = 0.5
+state = True
 
 def main():
-	global resetSwitch, frequencySwitch, stopSwitch, displaySwitch, SPICLK, SPIMISO, SPIMOSI, SPICS
+	global resetSwitch, frequencySwitch, stopSwitch, displaySwitch, SPICLK, SPIMISO, SPIMOSI, SPICS, state
 
 	#run initialisation
 	init.initPins(resetSwitch, frequencySwitch, stopSwitch, displaySwitch)
 	GPIO.add_event_detect(frequencySwitch, GPIO.FALLING, callback=frequencyChange, bouncetime=200)
-
+	GPIO.add_event_detect(stopSwitch, GPIO.FALLING, callback=frequencyChange, bouncetime=200)
+	#GPIO.add_event_detect(displaySwitch, GPIO.FALLING, callback=frequencyChange, bouncetime=200)
+	
 	timer = 0
-	state = True #if state is false program is not running
     	while(True):
-
-
-
 		while(state):#will run until reset button is bushed
 
 			data = sensors.getData()
@@ -50,7 +49,13 @@ def frequencyChange (channel):
 	elif (delay == 2):
 		delay = 0.5
 
+def stopButton (channel):
+	global state
 
+	if (state == False):
+		state = True
+	else:
+		state = False
 
 if __name__ == '__main__':
 	main()
