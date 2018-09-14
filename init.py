@@ -3,13 +3,26 @@ import RPi.GPIO as GPIO
 import Adafruit_MCP3008 #required library for adc, see prac sheet for how to install adafruit
 import time
 
+global tempCLK
+global tempCS
+global tempMOSI
+global tempMISO
+
 def initADC(SPICLK, SPIMISO, SPIMOSI, SPICS):
+	global tempCLK, tempCS, tempMOSI, tempMISO
 	GPIO.setmode(GPIO.BCM)
 	GPIO.setup(SPIMOSI, GPIO.OUT)
 	GPIO.setup(SPIMISO, GPIO.IN)
 	GPIO.setup(SPICLK, GPIO.OUT)
 	GPIO.setup(SPICS, GPIO.OUT)
-	mcp = Adafruit_MCP3008.MCP3008(clk=SPICLK, cs=SPICS, mosi=SPIMOSI, miso=SPIMISO)
+	tempCLK = SPICLK
+	tempCS = SPICS
+	tempMISO = SPIMISO
+	tempMOSI = SPIMOSI
+	
+
+
+#mcp = Adafruit_MCP3008.MCP3008(clk=SPICLK, cs=SPICS, mosi=SPIMOSI, miso=SPIMISO)
 
 
 def initPins(resetPin):
