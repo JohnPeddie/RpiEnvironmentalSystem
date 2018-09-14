@@ -43,7 +43,7 @@ def main():
 			#timer += delay
 			#time.sleep(delay)
 
-			data = sensors.getSensors(0, 0.5)
+			data = init.getData(0, 0.5)
 			print data
 
 if __name__ == '__main__':

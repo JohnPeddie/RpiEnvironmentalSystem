@@ -10,7 +10,20 @@ def initADC(SPICLK, SPIMISO, SPIMOSI, SPICS):
 	GPIO.setup(SPICS, GPIO.OUT)
 	mcp = Adafruit_MCP3008.MCP3008(clk=SPICLK, cs=SPICS, mosi=SPIMOSI, miso=SPIMISO)
 
+
 def initPins(resetPin):
 	#initialise all the pins
 	GPIO.setup(resetPin, GPIO.IN, pull_up_down=GPIO.PUD_UP) #eg of a pin being initialised
 	print("Pin initialised")
+
+def getData(channel, delay):
+        try:
+                while True:
+                        for i in range(8):
+                                values[i] = mcp.read_adc(i)
+                        time.sleep(delay)
+        except KeyboardInterrupt:
+                        spi.close()
+
+        return values
+
