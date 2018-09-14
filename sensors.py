@@ -4,8 +4,9 @@ import spidev
 import time
 import os
 import sys
+spi = spidev.SpiDev()
 
-def getTemperature(channel):
+def getData(channel):
 	adc = spi.xfer2([1,(8+channel)<<4,0]) # sending 3 bytes
 	data = ((adc[1]&3) << 8) + adc[2]
 	return data
@@ -16,13 +17,13 @@ def ConvertVolts(data, places):
 	return volts
 
 
-def checkSensor(channel, delay):
-	spi = spidev.SpiDev()
+def getSensors(channel, delay):
+	global spi
 	spi.open(0,0)
-    
+
 	try:
 		while True:
-			sensor_data = GetData(channel)
+			sensor_data = getData(channel)
 			sensor_volt = ConvertVolts(sensor_data, 2)
 			time.sleep(delay)
 	except KeyboardInterrupt:
