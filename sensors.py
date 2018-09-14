@@ -32,10 +32,8 @@ def getData():
 	potV = round((pot_adc/1024.0)*3.3, 2)
 	temp = round(((((temp_adc*3.3)/1024)-0.5)/0.01),2)
 	light = round((light_adc/985.0)*100.0,2)
-	
-	
-	
-	values[0] = time.strftime("%x") 
+
+	values[0] = time.strftime("%X") 
 	values[1] = 0
 	values[2] = potV
 	values[3] = temp

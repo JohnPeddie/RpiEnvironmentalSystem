@@ -21,12 +21,11 @@ SPICS = 8
 #global variables
 delay = 0.5
 state = True
+start_time = time.time()
 
 
 def main():
 	global resetSwitch, frequencySwitch, stopSwitch, displaySwitch, SPICLK, SPIMISO, SPIMOSI, SPICS, state
-
-	start_time = time.time()
 
 	#run initialisation
 	init.initPins(resetSwitch, frequencySwitch, stopSwitch, displaySwitch)
@@ -42,7 +41,8 @@ def main():
 			time.sleep(delay)
 			end_time = time.time()
 			timer = round(end_time-start_time,1)
-			print (timer, data)
+			data[1] = timer
+			print (data)
 
 def frequencyChange (channel):
 	global delay
