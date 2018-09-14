@@ -5,10 +5,10 @@ import datetime
 import time
 
 #global variables:
-#tempSensorPin = 22 #examples, i dont know if these pins are correct
-#potPin = 23
-#ldrPin =24
 resetPin = 23
+frequencySwitch = 24
+stopSwitch = 22
+displaySwitch = 27
 
 #ADC PINS
 SPICLK = 11
@@ -23,8 +23,6 @@ def main():
     init.initADC(SPICLK, SPIMISO, SPIMOSI, SPICS)
     init.initPins(tempSensorPin,potPin,ldrPin,resetPin)
 
-
-    #bla bla just example code on how to call functions from anothe$
     timer = 0
     state = False #if state is false program is not running
     while(True):
