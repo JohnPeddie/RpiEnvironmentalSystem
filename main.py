@@ -28,7 +28,7 @@ def main():
 	#run initialisation
 	init.initPins(resetSwitch, frequencySwitch, stopSwitch, displaySwitch)
 	GPIO.add_event_detect(frequencySwitch, GPIO.FALLING, callback=frequencyChange, bouncetime=200)
-	GPIO.add_event_detect(stopSwitch, GPIO.FALLING, callback=frequencyChange, bouncetime=200)
+	GPIO.add_event_detect(stopSwitch, GPIO.FALLING, callback=stopButton, bouncetime=200)
 	#GPIO.add_event_detect(displaySwitch, GPIO.FALLING, callback=frequencyChange, bouncetime=200)
 	
 	timer = 0
