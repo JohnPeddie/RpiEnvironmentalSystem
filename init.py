@@ -20,3 +20,4 @@ def initPins(tempSensorPin,potPin,ldrPin,resetPin):
 
 def someOtherInit():
     #blablabla
+

@@ -1,5 +1,6 @@
-#!/usr/bin/python
 
+
+=======
 import init.py
 import sensors.py
 import display.py
@@ -46,3 +47,4 @@ def main():
             #time.sleep(delay)
 
             sensors.getSensors(0, 0.5)
+
