@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO
 import Adafruit_MCP3008 #required library for adc, see prac sheet for how to install adafruit
+import time
 
 def initADC(SPICLK, SPIMISO, SPIMOSI, SPICS):
 	GPIO.setmode(GPIO.BCM)
@@ -15,15 +16,3 @@ def initPins(resetPin):
 	#initialise all the pins
 	GPIO.setup(resetPin, GPIO.IN, pull_up_down=GPIO.PUD_UP) #eg of a pin being initialised
 	print("Pin initialised")
-
-def getData(channel, delay):
-        try:
-                while True:
-                        for i in range(8):
-                                values[i] = mcp.read_adc(i)
-                        time.sleep(delay)
-        except KeyboardInterrupt:
-                        spi.close()
-
-        return values
-
