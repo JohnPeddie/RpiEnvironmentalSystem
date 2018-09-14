@@ -26,6 +26,7 @@ def getSensors(channel, delay):
 			sensor_data = getData(channel)
 			sensor_volt = ConvertVolts(sensor_data, 2)
 			time.sleep(delay)
+			print sensor_volt
 	except KeyboardInterrupt:
 			spi.close()
 
