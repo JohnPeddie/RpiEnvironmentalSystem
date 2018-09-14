@@ -5,20 +5,28 @@ import sensors.py
 import display.py
 import datetime
 import time
+
 #global variables:
-tempSensorChannel = 22 #examples, i dont know if these pins are correct
-potChannel = 23
-ldrChannel =24
-resetPin = 25
-#bla bla more pins
-#might be better to make the pins an array/linkedList
+#tempSensorPin = 22 #examples, i dont know if these pins are correct
+#potPin = 23
+#ldrPin =24
+resetPin = 23
+
+#ADC PINS
+SPICLK = 11
+SPIMISO = 9
+SPIMOSI = 10
+SPICS = 8
 
 def main():
-    global tempSensorPin, potPin, ldrPin, resetPin
+    global resetPin, SPICLK, SPIMISO, SPIMOSI, SPICS
+
     #run initialisation
-    init.initADC()
-    init.initPins(resetPin)
-    #bla bla just example code on how to call functions from another file
+    init.initADC(SPICLK, SPIMISO, SPIMOSI, SPICS)
+    init.initPins(tempSensorPin,potPin,ldrPin,resetPin)
+
+
+    #bla bla just example code on how to call functions from anothe$
     timer = 0
     state = False #if state is false program is not running
     while(True):
@@ -29,15 +37,12 @@ def main():
         while(state):#will run until reset button is bushed
         #if reset button pressed: state = False and break
 
-            ## TODO: write function to choose between 500ms, 1s, 2s delay
+            ## TODO: write function to choose between 500ms, 1s, 2s$
             #if 500 ms chosen then let delay = 500ms etc etc
 
-            sysTime = datetime.datetime.now().time() #gets the current system time
-            display.display(sysTime, timer, sensors.getPot(potChannel), sensors.getTempreture(tempSensorChannel), sensors.getLDR(ldrChannel))
-            timer += delay
-            time.sleep(delay)
+            #sysTime = datetime.datetime.now().time() #gets the cur$
+            #display.display(sysTime, timer, sensors.getPot(potPin)$
+            #timer += delay
+            #time.sleep(delay)
 
-
-
-if __name__ == "__main__":
-    main()
+            sensors.getSensors(0, 0.5)
