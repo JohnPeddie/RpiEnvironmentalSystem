@@ -1,4 +1,6 @@
-This is a project done by Max Chernotsky, James de Villiers and John Peddie
+This is a project done by Max Chernotsky, James de Villiers and John Peddie:
+
+Ignore pull request for now. I dont know how we are going to standerdise the main.py
 
 Code Structure:
 
