@@ -1,7 +1,7 @@
 #!/usr/bin/python
-import init.py
-import sensors.py
-import display.py
+import init
+import sensors
+import display
 import datetime
 import time
 

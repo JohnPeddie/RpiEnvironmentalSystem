@@ -10,13 +10,13 @@ def getTemperature(channel):
 	data = ((adc[1]&3) << 8) + adc[2]
 	return data
 
-def ConvertVolts(data, places)
+def ConvertVolts(data, places):
 	volts = (data*3.3)/float(1023)
 	volts = round(volts, places)
 	return volts
 
 
-def checkSensor(channel, delay)
+def checkSensor(channel, delay):
 	spi = spidev.SpiDev()
 	spi.open(0,0)
     
@@ -25,7 +25,7 @@ def checkSensor(channel, delay)
 			sensor_data = GetData(channel)
 			sensor_volt = ConvertVolts(sensor_data, 2)
 			time.sleep(delay)
-		except KeyboardInterrupt:
+	except KeyboardInterrupt:
 			spi.close()
 
 	return sensor_volt
