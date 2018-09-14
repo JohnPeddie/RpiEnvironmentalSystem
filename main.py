@@ -66,6 +66,7 @@ def stopButton (channel):
 
 def displayButton(channel):
 	#enter stuff here to call display function
+	print("")
 
 def resetButton (channel):
 	start_time = time.time()
