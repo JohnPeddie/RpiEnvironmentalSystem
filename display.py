@@ -1,5 +1,7 @@
 #!/usr/bin/python
+
 readings = [("Time", "Timer", "Pot", "Temp", "Light")]
+
 def display(sysTime, timer, Pot, Temp, Light):
     global readings
     readings.append((sysTime, timer, Pot, Temp, Light))

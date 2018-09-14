@@ -1,11 +1,9 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO
-import spidev #required library for adc, see prac sheet for how to install spidev
-
-# Open SPI bus
-#spi = spidev.SpiDev() # create spi object
-#spi.open(0,0)
-# RPI has one bus (#0) and two devices (#0 & #1)
+import spidev
+import time
+import os
+import sys
 
 def getTemperature(channel):
     adc = spi.xfer2([1,(8+channel)<<4,0]) # sending 3 bytes
@@ -30,4 +28,4 @@ def checkSensor(channel, delay)
 	except KeyboardInterrupt:
 		spi.close()
 
-	return, sensor_volt
+	return sensor_volt
