@@ -22,7 +22,6 @@ def main():
 	global resetPin, SPICLK, SPIMISO, SPIMOSI, SPICS
 
 	#run initialisation
-	init.initADC(SPICLK, SPIMISO, SPIMOSI, SPICS)
 	init.initPins(resetPin)
 
 	timer = 0
