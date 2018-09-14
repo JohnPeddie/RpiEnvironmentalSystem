@@ -5,6 +5,7 @@ import display
 import datetime
 import time
 import RPi.GPIO as GPIO
+import os
 
 #global variables:
 resetSwitch = 23
@@ -31,7 +32,8 @@ def main():
 	init.initPins(resetSwitch, frequencySwitch, stopSwitch, displaySwitch)
 	GPIO.add_event_detect(frequencySwitch, GPIO.FALLING, callback=frequencyChange, bouncetime=200)
 	GPIO.add_event_detect(stopSwitch, GPIO.FALLING, callback=stopButton, bouncetime=200)
-	#GPIO.add_event_detect(displaySwitch, GPIO.FALLING, callback=frequencyChange, bouncetime=200)
+	GPIO.add_event_detect(displaySwitch, GPIO.FALLING, callback=displayButton, bouncetime=200)
+	GPIO.add_event_detect(resetSwitch, GPIO.FALLING, callback=resetButton, bouncetime=200)
 
 	timer = 0
     	while(True):
@@ -42,7 +44,7 @@ def main():
 			end_time = time.time()
 			timer = round(end_time-start_time,1)
 			data[1] = timer
-			print (data)
+			#print (data)
 
 def frequencyChange (channel):
 	global delay
@@ -61,6 +63,13 @@ def stopButton (channel):
 		state = True
 	else:
 		state = False
+
+def displayButton(channel):
+	#enter stuff here to call display function
+
+def resetButton (channel):
+	start_time = time.time()
+	os.system('clear')
 
 if __name__ == '__main__':
 	main()
