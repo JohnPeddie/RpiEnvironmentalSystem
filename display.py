@@ -3,13 +3,13 @@
 readings = [("Time", "Timer", "Pot", "Temp", "Light")]
 
 def display(sysTime, timer, Pot, Temp, Light):
-    global readings
-    readings.append((sysTime, timer, Pot, Temp, Light))
+	global readings
+	readings.append((sysTime, timer, Pot, Temp, Light))
 
 
-    for reading in readings:
-        print '\t'.join(str(i) for i in reading)
-        print("-------------------------------------")
+	for reading in readings:
+		print '\t'.join(str(i) for i in reading)
+		print("-------------------------------------")
 
 
 
