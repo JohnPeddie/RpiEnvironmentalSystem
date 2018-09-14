@@ -37,7 +37,8 @@ def main():
 
 		while(state):#will run until reset button is bushed
 
-			data = sensors.getData(0, delay)
+			data[] = sensors.getData()
+			time.sleep(delay)
 			print data
 
 def frequencyChange (channel):
