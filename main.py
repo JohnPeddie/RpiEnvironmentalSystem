@@ -26,7 +26,7 @@ start_time = time.time()
 displayedData= []
 
 def main():
-	global resetSwitch, frequencySwitch, stopSwitch, displaySwitch, SPICLK, SPIMISO, SPIMOSI, SPICS, state
+	global resetSwitch, frequencySwitch, stopSwitch, displaySwitch, SPICLK, SPIMISO, SPIMOSI, SPICS, state, displayData
 
 	#run initialisation
 	init.initPins(resetSwitch, frequencySwitch, stopSwitch, displaySwitch)
@@ -44,7 +44,7 @@ def main():
 			end_time = time.time()
 			timer = round(end_time-start_time,1)
 			data[1] = timer
-			global displayedData = data
+			displayData = data
 			
 			#print (data)
 
