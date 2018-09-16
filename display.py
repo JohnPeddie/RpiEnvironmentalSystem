@@ -30,4 +30,3 @@ def display(sysTime, timer, Pot, Temp, Light):
 #                    format.format(cell, width)
 #                    for format, cell, width in zip(row_format, row, col_widths))
 #                for row_format, row in zip(table_format, table))
-
