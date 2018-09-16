@@ -72,7 +72,7 @@ def displayButton(channel):
 	global displayData
 	data = displayData
 	if (len(data) >=5):
-		display.display(data)
+		display.display(data[0],data[1],data[2],data[3],data[4])
 	else:
 		print("less than 5 items recorded")
 	print("")
