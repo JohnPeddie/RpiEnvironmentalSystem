@@ -43,7 +43,7 @@ def main():
 			time.sleep(delay)
 			end_time = time.time()
 			timer = round(end_time-start_time,0)
-			data[1] = timer
+			data[1] = timer.strftime("%X")
 			displayData.append(data[:])
 
 def frequencyChange (channel):
