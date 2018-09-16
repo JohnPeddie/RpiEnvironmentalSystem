@@ -71,7 +71,10 @@ def displayButton(channel):
 	#(sysTime, timer, Pot, Temp, Light)
 	global displayData
 	data = displayData
-	display.display(data[0],data[1],data[2],data[3],data[4])
+	if (len(data) >=5):
+		display.display(data)
+	else:
+		print("less than 5 items recorded")
 	print("")
 
 def resetButton (channel):
