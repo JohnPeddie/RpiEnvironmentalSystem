@@ -72,7 +72,7 @@ def displayButton(channel):
 	global displayData
 	data = displayData
 	if (len(data) >=5):
-		dispay.display([("Time", "Timer", "Pot", "Temp", "Light")])
+		display.display([("Time", "Timer", "Pot", "Temp", "Light")])
 		display.display(data[0])
 		display.display(data[1])
 		display.display(data[2])
