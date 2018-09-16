@@ -77,7 +77,7 @@ def displayButton(channel):
 		display.display(displayData[len(displayData) - 4])
 		display.display(displayData[len(displayData) - 3])
 		display.display(displayData[len(displayData) - 2])
-		display.display(displayData[len(displayuData) - 1])
+		display.display(displayData[len(displayData) - 1])
 	else:
 		print("less than 5 items recorded")
 	print("")
