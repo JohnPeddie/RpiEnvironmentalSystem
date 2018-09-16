@@ -6,6 +6,8 @@ import datetime
 import time
 import RPi.GPIO as GPIO
 import os
+import datetime
+
 
 #global variables:
 resetSwitch = 23
@@ -43,7 +45,7 @@ def main():
 			time.sleep(delay)
 			end_time = time.time()
 			timer = round(end_time-start_time,0)
-			data[1] = timer.strftime("%X")
+			data[1] = datetime.timedelta(seconds=timer)
 			displayData.append(data[:])
 
 def frequencyChange (channel):
