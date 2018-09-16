@@ -70,14 +70,14 @@ def displayButton(channel):
 	#enter stuff here to call display function
 	#(sysTime, timer, Pot, Temp, Light)
 	global displayData
-	data = displayData
-	if (len(data) >=5):
+	tempData = displayData
+	if (len(tempData) >=5):
 		display.display([("Time", "Timer", "Pot", "Temp", "Light")])
-		display.display(data[0])
-		display.display(data[1])
-		display.display(data[2])
-		display.display(data[3])
-		display.display(data[4])
+		display.display(tempData[len(tempData) - 5])
+		display.display(tempData[len(tempData) - 4])
+		display.display(tempData[len(tempData) - 3])
+		display.display(tempData[len(tempData) - 2])
+		display.display(tempData[len(tempData) - 1])
 	else:
 		print("less than 5 items recorded")
 	print("")
