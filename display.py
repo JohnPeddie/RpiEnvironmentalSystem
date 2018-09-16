@@ -3,7 +3,7 @@
 #readings = [("Time", "Timer", "Pot", "Temp", "Light")]
 
 def display(data):
-	global readings
+	#global readings
 	readings.append((data[0], data[1], data[2], data[3], data [4]))
 
 
