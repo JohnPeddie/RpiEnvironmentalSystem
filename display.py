@@ -2,9 +2,9 @@
 
 readings = [("Time", "Timer", "Pot", "Temp", "Light")]
 
-def display(sysTime, timer, Pot, Temp, Light):
+def display(data):
 	global readings
-	readings.append((sysTime, timer, Pot, Temp, Light))
+	readings.append((data[0], data[1], data[2], data[3], data [4]))
 
 
 	for reading in readings:
