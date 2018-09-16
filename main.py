@@ -23,7 +23,7 @@ SPICS = 8
 delay = 0.5
 state = True
 start_time = time.time()
-displayedData= []
+displayData= []
 
 def main():
 	global resetSwitch, frequencySwitch, stopSwitch, displaySwitch, SPICLK, SPIMISO, SPIMOSI, SPICS, state, displayData
@@ -69,8 +69,8 @@ def stopButton (channel):
 def displayButton(channel):
 	#enter stuff here to call display function
 	#(sysTime, timer, Pot, Temp, Light)
-	global displayedData
-	data = displayedData
+	global displayData
+	data = displayData
 	display.display(data[0],data[1],data[2],data[3],data[4])
 	print("")
 
