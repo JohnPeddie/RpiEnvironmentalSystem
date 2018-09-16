@@ -1,0 +1,31 @@
+##!/usr/bin/python
+import RPi.GPIO as GPIO
+import time
+import os
+import sys
+import init
+
+#ADC PINS
+SPICLK = 11
+SPIMISO = 9
+SPIMOSI = 10
+SPICS = 8
+
+
+values = [0]*8
+
+def getData(channel, delay):
+#ADC PINS
+SPICLK = 11
+SPIMISO = 9
+SPIMOSI = 10
+SPICS = 8
+
+	try:
+		while True:
+			values[0] = init.mcp.read_adc(0)
+			time.sleep(delay)
+	except KeyboardInterrupt:
+			spi.close()
+
+	return values
