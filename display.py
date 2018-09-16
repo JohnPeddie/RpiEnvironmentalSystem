@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-readings = [("Time", "Timer", "Pot", "Temp", "Light")]
+#readings = [("Time", "Timer", "Pot", "Temp", "Light")]
 
 def display(data):
 	global readings
