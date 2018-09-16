@@ -23,7 +23,7 @@ SPICS = 8
 delay = 0.5
 state = True
 start_time = time.time()
-displayData= [[]]
+displayData= []
 
 def main():
 	global resetSwitch, frequencySwitch, stopSwitch, displaySwitch, SPICLK, SPIMISO, SPIMOSI, SPICS, state, displayData
