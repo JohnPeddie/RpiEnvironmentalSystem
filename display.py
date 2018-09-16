@@ -4,12 +4,12 @@ def display(data):
 	readings = []
 	if (len(data) == 5):
 		readings.append((data[0],data[1],data[2],data[3],data[4]))
-		
+
 
 
 	for reading in readings:
 		print '\t'.join(str(i) for i in reading)
-		print("-------------------------------------")
+		print("--------------------------------------------")
 
 
 
