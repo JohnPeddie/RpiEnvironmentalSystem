@@ -42,7 +42,7 @@ def main():
 			data = sensors.getData()
 			time.sleep(delay)
 			end_time = time.time()
-			timer = round(end_time-start_time,1)
+			timer = round(end_time-start_time,0)
 			data[1] = timer
 			displayData.append(data)
 			
