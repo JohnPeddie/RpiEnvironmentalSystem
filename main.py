@@ -45,7 +45,6 @@ def main():
 			timer = round(end_time-start_time,0)
 			data[1] = timer
 			displayData.append(data[:])
-			print (displayData)
 
 def frequencyChange (channel):
 	global delay
