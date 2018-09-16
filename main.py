@@ -38,7 +38,7 @@ def main():
 	timer = 0
     	while(True):
 		while(state):#will run until reset button is bushed
-
+			data = 0
 			data = sensors.getData()
 			time.sleep(delay)
 			end_time = time.time()
@@ -73,11 +73,11 @@ def displayButton(channel):
 	display.display(["Time", "Timer", "Pot", "Temp", "Light"])
 	if (len(tempData) >=5):
 		#display.display([("Time", "Timer", "Pot", "Temp", "Light")])
-		display.display(tempData[len(tempData) - 5])
-		display.display(tempData[len(tempData) - 4])
-		display.display(tempData[len(tempData) - 3])
-		display.display(tempData[len(tempData) - 2])
 		display.display(tempData[len(tempData) - 1])
+		#display.display(tempData[len(tempData) - 4])
+		#display.display(tempData[len(tempData) - 3])
+		#display.display(tempData[len(tempData) - 2])
+		#display.display(tempData[len(tempData) - 1])
 	else:
 		print("less than 5 items recorded")
 	print("")
