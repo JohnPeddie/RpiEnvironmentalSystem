@@ -1,11 +1,9 @@
 #!/usr/bin/python
 
-readings = []
-
 def display(data):
-	global readings
+	readings []
 	if (len(data) == 5):
-		readings.append((data[0][0],data[0][1],data[0][2],data[0][3],data[0][4]))
+		readings.append((data[0],data[1],data[2],data[3],data[4]))
 		
 
 
