@@ -28,7 +28,7 @@ start_time = time.time()
 displayData= []
 
 def main():
-	global resetSwitch, frequencySwitch, stopSwitch, displaySwitch, SPICLK, SPIMISO, SPIMOSI, SPICS, state, displayData
+	global resetSwitch, frequencySwitch, stopSwitch, displaySwitch, SPICLK, SPIMISO, SPIMOSI, SPICS, state, displayData, start_time
 
 	#run initialisation
 	init.initPins(resetSwitch, frequencySwitch, stopSwitch, displaySwitch)
@@ -84,6 +84,7 @@ def displayButton(channel):
 	print("")
 
 def resetButton (channel):
+	global start_time
 	start_time = time.time()
 	os.system('clear')
 
