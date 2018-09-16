@@ -44,7 +44,7 @@ def main():
 			end_time = time.time()
 			timer = round(end_time-start_time,0)
 			data[1] = timer
-			displayData+= [data]
+			displayData.append(data[:])
 			print (displayData)
 
 def frequencyChange (channel):
