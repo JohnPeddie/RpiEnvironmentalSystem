@@ -18,6 +18,8 @@ temp_adc = 0
 light_adc = 0
 values = [0]*5
 
+GPIO.setwarnings(False)
+
 def getData():
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(SPIMOSI, GPIO.OUT)
